@@ -4,4 +4,4 @@ metadata:
   name: pods-quota
 spec:
   hard:
-    pods: "4"
+    pods: "10"

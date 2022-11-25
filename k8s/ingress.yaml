@@ -4,7 +4,6 @@ metadata:
   name: local-ingress
   annotations:
     konghq.com/strip-path: "true"
-    # konghq.com/plugins: app-jwt
 spec:
   ingressClassName: "kong"
   rules:

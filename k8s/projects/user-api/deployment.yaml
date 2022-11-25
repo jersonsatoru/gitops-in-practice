@@ -5,7 +5,7 @@ metadata:
   labels:
     app: user-api-deployment
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: user-api-deployment
@@ -22,22 +22,22 @@ spec:
         imagePullPolicy: Always
         resources:
           requests:
-            cpu: "250m"
-            memory: "500Mi"
+            cpu: "128m"
+            memory: "256Mi"
           limits:
-            cpu: "500m"
-            memory: "1000Mi"
+            cpu: "256m"
+            memory: "512Mi"
         livenessProbe:
-          initialDelaySeconds: 2
-          failureThreshold: 1
-          periodSeconds: 1
+          initialDelaySeconds: 3
+          failureThreshold: 2
+          periodSeconds: 3
           httpGet:
             path: "/v1/healthz"
             port: 4000
         readinessProbe:
-          initialDelaySeconds: 2
-          failureThreshold: 1
-          periodSeconds: 1
+          initialDelaySeconds: 3
+          failureThreshold: 2
+          periodSeconds: 3
           httpGet:
             path: "/v1/healthz"
             port: 4000

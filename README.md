@@ -67,5 +67,3 @@ ou rodar o seguinte commando:
 ```sh
 sudo echo 127.0.0.1 batata.me > /etc/hosts
 ```
-
-### Made with 💚 in Go.K

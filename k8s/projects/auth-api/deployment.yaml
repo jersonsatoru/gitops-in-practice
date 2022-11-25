@@ -20,3 +20,24 @@ spec:
         ports:
         - containerPort: 4000
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: '256Mi'
+            cpu: '128m'
+          limits:
+            memory: '512Mi'
+            cpu: '256m'
+        livenessProbe:
+          initialDelaySeconds: 3
+          failureThreshold: 2
+          periodSeconds: 3
+          httpGet:
+            path: '/v1/healthz'
+            port: 4000
+        readinessProbe:
+          initialDelaySeconds: 3
+          failureThreshold: 2
+          periodSeconds: 3
+          httpGet:
+            path: '/v1/healthz'
+            port: 4000
