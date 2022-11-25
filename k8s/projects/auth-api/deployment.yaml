@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: auth-api-deployment
   namespace: local
+  annotations:
+    batata.me/owner: jersonsatoru@yahoo.com.br
   labels:
     app: auth-api-deployment
 spec:

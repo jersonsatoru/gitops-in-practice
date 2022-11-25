@@ -3,6 +3,8 @@ kind: ResourceQuota
 metadata:
   name: pods-quota
   namespace: local
+  annotations:
+    batata.me/owner: jersonsatoru@yahoo.com.br
 spec:
   hard:
     pods: "10"

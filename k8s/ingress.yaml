@@ -4,6 +4,7 @@ metadata:
   name: local-ingress
   namespace: local
   annotations:
+    batata.me/owner: jersonsatoru@yahoo.com.br
     konghq.com/strip-path: "true"
 spec:
   ingressClassName: "kong"

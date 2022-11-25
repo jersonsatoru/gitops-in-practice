@@ -5,6 +5,8 @@ metadata:
   labels:
     app: user-api-deployment
   namespace: local
+  annotations:
+    batata.me/owner: jersonsatoru@yahoo.com.br
 spec:
   replicas: 1
   selector:

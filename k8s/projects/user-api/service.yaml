@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: user-api-service
   namespace: local
+  annotations:
+    batata.me/owner: jersonsatoru@yahoo.com.br
 spec:
   selector:
     app: user-api-deployment
