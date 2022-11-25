@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-api-deployment
+  labels:
+    app: auth-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-api-deployment
+  template:
+    metadata:
+      labels:
+        app: auth-api-deployment
+    spec:
+      containers:
+      - name: auth-api-app
+        image: localhost:5001/auth-api
+        ports:
+        - containerPort: 4000
+        imagePullPolicy: Always

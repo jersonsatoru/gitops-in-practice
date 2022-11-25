@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-api-deployment
+  labels:
+    app: user-api-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: user-api-deployment
+  template:
+    metadata:
+      labels:
+        app: user-api-deployment
+    spec:
+      containers:
+      - name: user-api-app
+        image: localhost:5001/user-api
+        ports:
+        - containerPort: 4000
+        imagePullPolicy: Always
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "500Mi"
+          limits:
+            cpu: "500m"
+            memory: "1000Mi"
+        livenessProbe:
+          initialDelaySeconds: 2
+          failureThreshold: 1
+          periodSeconds: 1
+          httpGet:
+            path: "/v1/healthz"
+            port: 4000
+        readinessProbe:
+          initialDelaySeconds: 2
+          failureThreshold: 1
+          periodSeconds: 1
+          httpGet:
+            path: "/v1/healthz"
+            port: 4000
+            
