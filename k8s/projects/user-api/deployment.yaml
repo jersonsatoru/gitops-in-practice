@@ -4,6 +4,7 @@ metadata:
   name: user-api-deployment
   labels:
     app: user-api-deployment
+  namespace: local
 spec:
   replicas: 1
   selector:
@@ -41,4 +42,3 @@ spec:
           httpGet:
             path: "/v1/healthz"
             port: 4000
-            
