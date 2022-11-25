@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  jenkins:
+    image: jenkins/jenkins:2.379-alpine
+    ports:
+      - 8079:8080
+      - 50000:50000
+    volumes:
+      - jenkins:/var/jenkins_home
+volumes:
+  jenkins:
