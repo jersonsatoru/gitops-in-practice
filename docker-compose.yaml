@@ -1,11 +1,18 @@
 version: '3.3'
 services:
   jenkins:
-    image: jenkins/jenkins:2.379-alpine
+    build:
+      context: ./jenkins
     ports:
       - 8079:8080
       - 50000:50000
     volumes:
       - jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - kind
 volumes:
   jenkins:
+networks:
+  kind:
+    external: true
