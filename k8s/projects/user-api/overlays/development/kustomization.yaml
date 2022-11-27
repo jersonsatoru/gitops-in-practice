@@ -1,5 +1,9 @@
-bases:
- - ../../application
 namespace: development
 resources:
-  - ./namespace.yaml
+- ./namespace.yaml
+- ../../application
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: localhost:5001/user-api
+  newTag: de7768d
