@@ -1,0 +1,5 @@
+namespace: local
+resources:
+  - ./namespace.yaml
+bases:
+- ../../application

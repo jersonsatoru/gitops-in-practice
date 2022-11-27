@@ -1,0 +1,5 @@
+namespace: development
+resources:
+  - ./namespace.yaml
+bases:
+- ../../application
